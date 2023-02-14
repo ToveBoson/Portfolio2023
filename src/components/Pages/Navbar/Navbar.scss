@@ -1,0 +1,63 @@
+@use "../../../mixins/mixins" as m;
+
+.header {
+  // background-color: rgba(0, 0, 0, 0.542);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  @include m.small {
+    height: 100px;
+    width: 100%;
+    right: 0;
+    position: absolute;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &__logo {
+      color: white;
+      font-size: 40px;
+      position: absolute;
+      top: 0;
+      left: 10px;
+      // z-index: 1;
+    }
+  }
+
+  &__navbar {
+    padding: 0;
+
+    @include m.small {
+      display: flex;
+      flex-direction: row;
+      right: 0;
+      position: absolute;
+      z-index: -3;
+    }
+
+    &__pages {
+      list-style: none;
+      padding: 1rem;
+
+      &__link {
+        color: white;
+        font-size: 25px;
+        text-decoration: none;
+
+        @include m.small {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &__hamburger {
+      position: relative;
+      right: 0;
+    }
+  }
+}
